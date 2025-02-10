@@ -6,3 +6,10 @@ h1 {
     color:navy;
     margin: 20px;
 }
+
+#img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
