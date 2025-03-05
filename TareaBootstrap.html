@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Universo: Nebulosas y Maravillas Espaciales</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0a0a1a;
+            color: #e0e0ff;
+        }
+        
+        .navbar {
+            background-color: rgba(10, 10, 40, 0.8) !important;
+        }
+        
+        .jumbotron-space {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 20, 0.7)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .card {
+            background-color: rgba(20, 20, 50, 0.7);
+            border: 1px solid #4040a0;
+        }
+        
+        .section-title {
+            color: #9090ff;
+            border-bottom: 2px solid #4040a0;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .galaxy-bg {
+            background-color: rgba(20, 20, 60, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .badge-space {
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .progress {
+            height: 25px;
+            margin-bottom: 15px;
+            background-color: #13133d;
+        }
+
+        .table {
+            color: #e0e0ff;
+        }
+
+        .accordion-item {
+            background-color: #1a1a4a;
+            border-color: #4040a0;
+        }
+        
+        .accordion-button {
+            background-color: #2a2a6a;
+            color: white;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: #3a3a8a;
+            color: white;
+            
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: #5a5aff;
+        }
+        
+        .nav-pills .nav-link {
+            color: #9090ff;
+        }
+        
+        .list-group-item {
+            background-color: #2a2a6a;
+            color: #e0e0ff;
+            border-color: #4040a0;
+        }
+        
+        .page-link {
+            background-color: #2a2a6a;
+            color: #9090ff;
+            border-color: #4040a0;
+        }
+        
+        .page-item.active .page-link {
+            background-color: #5a5aff;
+            border-color: #4040a0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="spinner-grow spinner-grow-sm text-info"></span>
+                Cosmos Explorer
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nebulosas">Nebulosas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galaxias">Galaxias</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Fenómenos Espaciales
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#agujeros-negros">Agujeros Negros</a></li>
+                            <li><a class="dropdown-item" href="#estrellas">Estrellas</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#exploracion">Exploración Espacial</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar en el cosmos..." aria-label="Search">
+                    <button class="btn btn-outline-info" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Jumbotron -->
+        <div class="p-5 mb-4 jumbotron-space">
+            <div class="container-fluid py-5">
+                <h1 class="display-3 fw-bold">El Universo Fascinante</h1>
+                <p class="fs-4">Explora las maravillas cósmicas, desde nebulosas multicolores hasta galaxias lejanas y fenómenos espaciales extraordinarios.</p>
+                <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#tourModal">Comenzar Tour Virtual</button>
+                <div class="spinner-border text-light ms-3" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert -->
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>¡Nuevo descubrimiento!</strong> Los astrónomos acaban de encontrar una nueva nebulosa en la constelación de Orión.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <!-- Intro Section with Grid -->
+        <div class="row mb-5">
+            <div class="col-md-8">
+                <h2 class="section-title">La Vastedad del Cosmos</h2>
+                <p class="lead">El universo es un lugar inmenso y misterioso, lleno de fenómenos sorprendentes y belleza incomparable.</p>
+                <p>Desde las coloridas nebulosas hasta las poderosas galaxias y los enigmáticos agujeros negros, el espacio exterior nos ofrece un espectáculo visual que ha fascinado a la humanidad desde tiempos inmemoriales.</p>
+                <p>En esta página, exploraremos algunos de los objetos más impresionantes del cosmos, descubriendo sus secretos y admirando su belleza.</p>
+                <div class="btn-group" role="group" aria-label="Opciones de contenido">
+                    <button type="button" class="btn btn-outline-primary">Ver Imágenes</button>
+                    <button type="button" class="btn btn-outline-primary">Leer Artículos</button>
+                    <button type="button" class="btn btn-outline-primary">Ver Videos</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/api/placeholder/400/280" class="card-img-top" alt="Vista de una galaxia">
+                    <div class="card-body">
+                        <h5 class="card-title">Hechos Fascinantes</h5>
+                        <p class="card-text">El universo observable tiene un diámetro de aproximadamente 93 mil millones de años luz y contiene más de 2 billones de galaxias.</p>
+                        <a href="#" class="btn btn-primary">Más Datos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nebulosas Section with Cards -->
+        <section id="nebulosas" class="mb-5">
+            <h2 class="section-title">Nebulosas: Nubes Cósmicas</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="/api/placeholder/400/250" class="card-img-top" alt="Nebulosa de Orión">
+                        <div class="card-body">
+                            <h5 class="card-title">Nebulosa de Orión</h5>
+                            <p class="card-text">Una de las nebulosas más brillantes y visibles a simple vista, situada en la constelación de Orión.</p>
+                            <span class="badge bg-primary badge-space">Emisión</span>
+                            <span class="badge bg-info badge-space">1,300 años luz</span>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Descubierta en 1610
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="/api/placeholder/400/250" class="card-img-top" alt="Nebulosa del Cangrejo">
+                        <div class="card-body">
+                            <h5 class="card-title">Nebulosa del Cangrejo</h5>
+                            <p class="card-text">Remanente de una supernova observada por astrónomos chinos en 1054, contiene una pulsar en su centro.</p>
+                            <span class="badge bg-primary badge-space">Supernova</span>
+                            <span class="badge bg-info badge-space">6,500 años luz</span>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Origen: Supernova 1054
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="/api/placeholder/400/250" class="card-img-top" alt="Nebulosa del Águila">
+                        <div class="card-body">
+                            <h5 class="card-title">Nebulosa del Águila</h5>
+                            <p class="card-text">Famosa por contener los "Pilares de la Creación", columnas de gas y polvo donde se forman nuevas estrellas.</p>
+                            <span class="badge bg-primary badge-space">Formación estelar</span>
+                            <span class="badge bg-info badge-space">7,000 años luz</span>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Fotografiada por Hubble en 1995
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-3">
+                <button class="btn btn-outline-light" type="button" data-bs-toggle="collapse" data-bs-target="#moreNebulae" aria-expanded="false" aria-controls="moreNebulae">
+                    Ver más nebulosas
+                </button>
+            </div>
+            
+            <div class="collapse" id="moreNebulae">
+                <div class="card card-body mt-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item">Nebulosa del Anillo</li>
+                                <li class="list-group-item">Nebulosa de la Hélice</li>
+                                <li class="list-group-item">Nebulosa del Velo</li>
+                                <li class="list-group-item">Nebulosa Trífida</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group">
+                                <li class="list-group-item">Nebulosa Cabeza de Caballo</li>
+                                <li class="list-group-item">Nebulosa del Ojo de Gato</li>
+                                <li class="list-group-item">Nebulosa de la Laguna</li>
+                                <li class="list-group-item">Nebulosa Dumbbell</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galaxias Section with Progress Bars -->
+        <section id="galaxias" class="galaxy-bg">
+            <h2 class="section-title">Galaxias: Ciudades de Estrellas</h2>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h5>Tamaño relativo de galaxias (diámetro en años luz)</h5>
+                    <div class="progress">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">Vía Láctea: 100,000</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Andrómeda: 220,000</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">Galaxia del Triángulo: 60,000</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">IC 1101: 4,000,000</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5>Número estimado de estrellas</h5>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">Vía Láctea: 250 mil millones</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">Andrómeda: 1 billón</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Galaxia del Triángulo: 40 mil millones</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">IC 1101: 100 billones</div>
+                    </div>
+                </div>
+            </div>
+            
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Distancia (años luz)</th>
+                        <th>Descubrimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vía Láctea</td>
+                        <td>Espiral barrada</td>
+                        <td>0 (nosotros estamos aquí)</td>
+                        <td>Prehistoria</td>
+                    </tr>
+                    <tr>
+                        <td>Andrómeda (M31)</td>
+                        <td>Espiral</td>
+                        <td>2.5 millones</td>
+                        <td>964 d.C.</td>
+                    </tr>
+                    <tr>
+                        <td>Galaxia del Triángulo (M33)</td>
+                        <td>Espiral</td>
+                        <td>2.7 millones</td>
+                        <td>1654</td>
+                    </tr>
+                    <tr>
+                        <td>Galaxia del Sombrero (M104)</td>
+                        <td>Espiral</td>
+                        <td>29.3 millones</td>
+                        <td>1781</td>
+                    </tr>
+                    <tr>
+                        <td>Galaxia del Remolino (M51)</td>
+                        <td>Espiral</td>
+                        <td>23 millones</td>
+                        <td>1773</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Agujeros Negros Section with Accordion -->
+        <section id="agujeros-negros" class="mb-5 mt-5">
+            <h2 class="section-title">Agujeros Negros: Los Devoradores Cósmicos</h2>
+            
+            <div class="accordion" id="blackHoleAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ¿Qué son los agujeros negros?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#blackHoleAccordion">
+                        <div class="accordion-body">
+                            Los agujeros negros son regiones del espacio-tiempo donde la gravedad es tan fuerte que nada, ni siquiera la luz, puede escapar de ellos. Se forman cuando estrellas masivas colapsan al final de su vida o por otros procesos cósmicos. Su gravedad intensa deforma el espacio-tiempo, creando un "horizonte de eventos" del cual nada puede regresar.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Tipos de agujeros negros
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#blackHoleAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>Estelares:</strong> Formados por el colapso de estrellas masivas, tienen masas entre 5 y 100 veces la del Sol.</li>
+                                <li><strong>Supermasivos:</strong> Se encuentran en el centro de la mayoría de galaxias, incluida la Vía Láctea. Tienen masas de millones o miles de millones de veces la del Sol.</li>
+                                <li><strong>Intermedios:</strong> Con masas entre 100 y 100,000 veces la del Sol, son más raros y menos comprendidos.</li>
+                                <li><strong>Primordiales:</strong> Teóricamente formados poco después del Big Bang, podrían tener diversos tamaños.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Agujeros negros famosos
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#blackHoleAccordion">
+                        <div class="accordion-body">
+                            <ul>
+                                <li><strong>Sagitario A*:</strong> El agujero negro supermasivo en el centro de nuestra galaxia, la Vía Láctea, con una masa de aproximadamente 4 millones de veces la del Sol.</li>
+                                <li><strong>M87*:</strong> El primer agujero negro fotografiado, ubicado en el centro de la galaxia M87, con una masa de unos 6.5 mil millones de veces la del Sol.</li>
+                                <li><strong>Cygnus X-1:</strong> Uno de los primeros agujeros negros descubiertos, es un agujero negro estelar que forma parte de un sistema binario.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-warning mt-3">
+                <h5>¿Sabías que?</h5>
+                Si un agujero negro del tamaño del Sol reemplazara al Sol, no "succionaría" los planetas. Orbitarían normalmente, ya que la gravedad a esa distancia sería la misma.
+            </div>
+        </section>
+
+        <!-- Estrellas Section with Pills and Images -->
+        <section id="estrellas" class="mb-5">
+            <h2 class="section-title">Estrellas: Los Faros del Universo</h2>
+            
+            <ul class="nav nav-pills mb-3" id="starsTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="lifecycle-tab" data-bs-toggle="pill" data-bs-target="#lifecycle" type="button" role="tab" aria-controls="lifecycle" aria-selected="true">Ciclo de Vida</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="types-tab" data-bs-toggle="pill" data-bs-target="#types" type="button" role="tab" aria-controls="types" aria-selected="false">Tipos de Estrellas</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="famous-tab" data-bs-toggle="pill" data-bs-target="#famous" type="button" role="tab" aria-controls="famous" aria-selected="false">Estrellas Famosas</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="starsTabContent">
+                <div class="tab-pane fade show active" id="lifecycle" role="tabpanel" aria-labelledby="lifecycle-tab">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="/api/placeholder/500/300" class="img-fluid rounded" alt="Ciclo de vida estelar">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Ciclo de Vida de las Estrellas</h4>
+                            <ol class="list-group list-group-numbered">
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Nebulosa</div>
+                                        Las estrellas comienzan como nubes de gas y polvo.
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">1</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Protoestrella</div>
+                                        La nube se colapsa bajo su propia gravedad.
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">2</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Secuencia Principal</div>
+                                        La estrella fusiona hidrógeno en helio.
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">3</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Gigante Roja o Supergigante</div>
+                                        La estrella se expande al agotar su hidrógeno.
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">4</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Fase Final</div>
+                                        Nebulosa planetaria y enana blanca, o supernova y estrella de neutrones/agujero negro.
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">5</span>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="types" role="tabpanel" aria-labelledby="types-tab">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Clasificación Espectral</h4>
+                            <table class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th>Clase</th>
+                                        <th>Color</th>
+                                        <th>Temperatura (K)</th>
+                                        <th>Ejemplo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>O</td>
+                                        <td>Azul</td>
+                                        <td>≥ 30,000</td>
+                                        <td>Alnitak</td>
+                                    </tr>
+                                    <tr>
+                                        <td>B</td>
+                                        <td>Azul-blanco</td>
+                                        <td>10,000-30,000</td>
+                                        <td>Rigel</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A</td>
+                                        <td>Blanco</td>
+                                        <td>7,500-10,000</td>
+                                        <td>Sirio</td>
+                                    </tr>
+                                    <tr>
+                                        <td>F</td>
+                                        <td>Blanco-amarillo</td>
+                                        <td>6,000-7,500</td>
+                                        <td>Procyon</td>
+                                    </tr>
+                                    <tr>
+                                        <td>G</td>
+                                        <td>Amarillo</td>
+                                        <td>5,200-6,000</td>
+                                        <td>Sol</td>
+                                    </tr>
+                                    <tr>
+                                        <td>K</td>
+                                        <td>Naranja</td>
+                                        <td>3,700-5,200</td>
+                                        <td>Arturo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>M</td>
+                                        <td>Rojo</td>
+                                        <td>≤ 3,700</td>
+                                        <td>Betelgeuse</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-header">Tamaño relativo</div>
+                                <img src="/api/placeholder/500/300" class="card-img-top" alt="Comparación de tamaños estelares">
+                                <div class="card-body">
+                                    <p class="card-text">Las estrellas varían enormemente en tamaño, desde enanas rojas más pequeñas que Júpiter hasta supergigantes como UY Scuti, que es más de 1,700 veces el radio del Sol.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="famous" role="tabpanel" aria-labelledby="famous-tab">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="/api/placeholder
